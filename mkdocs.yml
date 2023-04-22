@@ -52,3 +52,4 @@ nav:
           - geoindia module: geoindia.md
     - Examples:
         - examples/intro.ipynb
+        - examples/folium.ipynb
