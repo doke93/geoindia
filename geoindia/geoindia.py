@@ -1,6 +1,24 @@
 """Main module."""
 import random
 import string
+import ipyleaflet
+
+class Map(ipyleaflet.Map):
+
+    def __init__(self, center, zoom, **kwargs):
+
+        if "scroll_wheel_zoom" not in kwargs:
+            kwargs["scroll_wheel_zoom"]  =True
+        super().__init__(center=center, zoom=zoom, **kwargs)
+
+    def add_search_control(self, position='topleft' ,**kwargs):
+
+
+        if "url" not in kwargs:
+            kwargs['url'] = "https://nominatim.openstreetmap.org/search?format=json&q={s}"
+            
+        search_control = ipyleaflet.SearchControl(position=position, **kwargs)
+        self.add_control(search_control)
 
 def generate_random_string(length=10):
     """Generate a randowm string of a given length
