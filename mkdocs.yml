@@ -50,3 +50,5 @@ nav:
     - Report Issues: https://github.com/doke93/geoindia/issues
     - API Reference:
           - geoindia module: geoindia.md
+    - Examples:
+        - examples/intro.ipynb
